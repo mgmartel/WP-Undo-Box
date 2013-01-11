@@ -83,10 +83,10 @@ if (!class_exists('WP_UndoBox')) :
 
         public function do_metabox() {
             global $post;
-			if ( !$revisions = wp_get_post_revisions( $post->ID, array ( 'numberposts' => 1 ) ) ) :
+            if ( !$revisions = wp_get_post_revisions( $post->ID, array ( 'numberposts' => 1 ) ) ) :
                 // @TODO Is there a better string for this?
                 _e ("No items found.");
-				return;
+                return;
             endif;
             $revision = current ( $revisions );
             if ( !current_user_can( 'read_post', $revision->ID ) ) :
