@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple one-click restore last post revision when writing
+Simple one-click restore post when writing
 
 == Description ==
 
@@ -21,12 +21,6 @@ Reverting again restores the initial version.
 * One-click revert
 * Quick link to compare current and latest revision
 * Quick link to all revisions meta box (and shows it when hidden)
-
-= Usage =
-
-After you installed Live Dashboard, you get a metabox on the top of your Dashboard prompting you to try Live Dashboard or set it as your default dashboard.
-
-In Live Dashboard you can always switch back to the WP Dashboard by click 'Switch Interface'. To set the default dashboard, go to Users->Your Profile.
 
 == Installation ==
 

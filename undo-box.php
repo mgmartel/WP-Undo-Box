@@ -2,7 +2,7 @@
 /*
   Plugin Name: Undo Box
   Plugin URI: http://trenvo.com
-  Description: Simple one-click revert to previous post revision when writing
+  Description: Simple one-click restore post when writing
   Version: 1.0
   Author: Mike Martel
   Author URI: http://trenvo.com
