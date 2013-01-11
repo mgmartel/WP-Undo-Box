@@ -12,7 +12,7 @@ Simple one-click restore post when writing
 
 == Description ==
 
-Undo Box adds a simple metabox to your post editor, allowing you to quickly restore the last (auto)saved version of a post.
+Undo Box adds a simple meta box to your post editor, allowing you to quickly restore the last (auto)saved version of a post.
 
 Reverting again restores the initial version.
 
