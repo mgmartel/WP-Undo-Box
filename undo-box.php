@@ -59,13 +59,15 @@ if (!class_exists('WP_UndoBox')) :
                 return;
 
             global $wp_meta_boxes;
-            add_meta_box('undo-box', 'Undo', array ( &$this, 'do_metabox' ), null, 'side', 'core' );
 
-            $undo_box = $wp_meta_boxes['post']['side']['core']['undo-box'];
-            unset ( $wp_meta_boxes['post']['side']['core']['undo-box'] );
+            $page = get_current_screen()->id;
+            add_meta_box('undo-box', __('Undo'), array ( &$this, 'do_metabox' ), $page, 'side', 'core' );
+
+            $undo_box = $wp_meta_boxes[$page]['side']['core']['undo-box'];
+            unset ( $wp_meta_boxes[$page]['side']['core']['undo-box'] );
 
             // With array_splice we lose undo_box key in the metabox array. Is this a problem?
-            array_splice($wp_meta_boxes['post']['side']['core'], 1, 0, array ( $undo_box ) );
+            array_splice($wp_meta_boxes[$page]['side']['core'], 1, 0, array ( $undo_box ) );
 
             add_action('admin_enqueue_scripts', array ( &$this, 'enqueue_script' ) );
         }
@@ -80,11 +82,6 @@ if (!class_exists('WP_UndoBox')) :
             }
 
         public function do_metabox() {
-            $post = get_post();
-            if ( ! WP_POST_REVISIONS ) :
-                _e ("Sorry, revisions are disabled.");
-                return;
-            endif;
 			if ( !$revisions = wp_get_post_revisions( $post->ID, array ( 'numberposts' => 1 ) ) ) :
                 // @TODO Is there a better string for this?
                 _e ("No items found.");
